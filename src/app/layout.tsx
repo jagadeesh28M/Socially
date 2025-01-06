@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressContentEditableWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
