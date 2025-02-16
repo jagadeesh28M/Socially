@@ -11,12 +11,12 @@ function FollowButton({ userId }: { userId: string }) {
 
   const handleFollow = async () => {
     setIsLoading(true);
+
     try {
       await toggleFollow(userId);
       toast.success("User followed successfully");
     } catch (error) {
       toast.error("Error following user");
-      console.error(error);
     } finally {
       setIsLoading(false);
     }
