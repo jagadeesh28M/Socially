@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -55,6 +58,7 @@ export default function RootLayout({
             </div>
             <Toaster />
           </ThemeProvider>
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
